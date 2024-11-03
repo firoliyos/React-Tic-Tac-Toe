@@ -9,8 +9,11 @@ function Square({ value, onClick }){
 export default function TicTacToe() {
     const [squares, setSquares] = useState(Array(9).fill(''))
     const [isXTurn, setIsXTurn] = useState(true)
+
+
     function handleClick(getCurrentSquare) {
         let cpySquares = [...squares]
+        if(cpySquares[getCurrentSquare]) return
         cpySquares[getCurrentSquare] = isXTurn ? 'X' : 'O'
         setIsXTurn(!isXTurn)
         setSquares(cpySquares)
