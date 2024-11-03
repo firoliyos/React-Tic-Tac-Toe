@@ -39,7 +39,10 @@ export default function TicTacToe() {
         setSquares(cpySquares)
     }
 
-    
+    function handleRestart() {
+        setIsXTurn(true)
+        setSquares(Array(9).fill(''))
+    }
 
     useEffect(() => {
         if(!getWinner(squares) && squares.every(item => item !== '')) {
